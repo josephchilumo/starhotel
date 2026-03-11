@@ -4,35 +4,35 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b">
+    <header className="sticky top-0 z-50 bg-white backdrop-blur-md border-b">
 
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
         {/* Left Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <a className="text-sm uppercase tracking-wider text-gray-600 hover:text-gray-900 cursor-pointer">
+          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-emerald-500 cursor-pointer">
             Accommodation
           </a>
-          <a className="text-sm uppercase tracking-wider text-gray-600 hover:text-gray-900 cursor-pointer">
+          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-emerald-500 cursor-pointer">
             Dining
           </a>
-          <a className="text-sm uppercase tracking-wider text-gray-600 hover:text-gray-900 cursor-pointer">
+          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-emerald-500 cursor-pointer">
             Activities
           </a>
         </nav>
 
         {/* Logo */}
-        <h1 className="text-xl tracking-[0.25rem] font-light text-gray-900">
+        <h1 className="text-xl tracking-widest font-light text-gray-900">
           Star<span className="font-semibold">Hotel</span>
         </h1>
 
         {/* Right Side */}
         <div className="hidden md:flex items-center space-x-6">
-          <a className="text-sm uppercase tracking-wider text-gray-600 hover:text-gray-900 cursor-pointer">
+          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-gray-900 cursor-pointer">
             Contact
           </a>
 
-          <button className="bg-white/20 text-gray-600 px-6 py-3 border border-gray-600 text-sm tracking-wider hover:bg-white/40 transition duration-300 font-sans">
+          <button className="bg-white/20 text-gray-600 px-6 py-3 border border-emerald-500 text-sm tracking-tight hover:bg-emerald-500 hover:text-white transition duration-300 font-sans">
             Book Now
           </button>
         </div>
