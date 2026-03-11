@@ -4,19 +4,19 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white backdrop-blur-md border-b">
+    <header className="sticky top-0 z-50 bg-emerald-400 backdrop-blur-md border-b">
 
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
         {/* Left Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-emerald-500 cursor-pointer">
+          <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
             Accommodation
           </a>
-          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-emerald-500 cursor-pointer">
+          <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
             Dining
           </a>
-          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-emerald-500 cursor-pointer">
+          <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
             Activities
           </a>
         </nav>

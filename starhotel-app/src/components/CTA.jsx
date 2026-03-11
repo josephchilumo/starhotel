@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBed, FaUtensils, FaSpa, FaSwimmer } from "react-icons/fa";
 import starhotelhero from "../Images/starhotelhero.png";
+import roomImg2 from "../Images/roomImg2.webp";
 
 function CTASection() {
   const features = [
@@ -81,7 +82,7 @@ function CTASection() {
 
             <a
               href="#booking"
-              className="inline-block bg-emerald-500 text-white tracking-widest px-8 py-3 rounded-lg shadow-md hover:bg-emerald-600 transition duration-300"
+              className="inline-block bg-emerald-500 text-white tracking-widest px-8 py-3 rounded-lg shadow-md hover:bg-emerald-600 transition shadow-xl hover:scale-105 transition duration-500 duration-300"
             >
               Book Now
             </a>
@@ -103,7 +104,7 @@ function CTASection() {
 
             <div className="relative -translate-y-10">
               <img
-                src={starhotelhero}
+                src={roomImg2}
                 alt="Hotel Interior"
                 className="w-full h-[420px] object-cover rounded-2xl shadow-2xl hover:scale-105 transition duration-500"
               />
