@@ -3,7 +3,7 @@ import bedroomimage from "../Images/bedroomimage.png";
 
 const Hero = () => {
   return (
-    <section className="relative h-[650px] flex flex-col items-center justify-center text-center overflow-hidden border-b border-emerald-500 ">
+    <section className="p-8 relative h-[650px] flex flex-col items-center justify-center text-center overflow-hidden border-b border-emerald-500 ">
       
       {/* Background Image */}
       <div
