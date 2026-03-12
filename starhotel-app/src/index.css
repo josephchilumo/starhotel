@@ -33,3 +33,15 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+@media print {
+  nav {
+    display: block !important;
+  }
+}
+@media print {
+  .print-show {
+    opacity: 1 !important;
+    transform: none !important;
+    position: static !important;
+  }
+}

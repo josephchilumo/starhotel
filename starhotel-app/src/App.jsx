@@ -6,6 +6,8 @@ import Offering from './components/Offering'
 import Gallery from './components/Gallery'
 import GuestReviews from './components/GuestReviews'
 import RoomReview from './components/RoomReview'
+import NewsLetter from './components/NewsLetter'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
       <Gallery />
       <GuestReviews />
       <RoomReview />
+      <NewsLetter/>
+      <Footer />
 
     </div>
   )
