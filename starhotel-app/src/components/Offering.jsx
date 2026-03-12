@@ -38,10 +38,10 @@ function Offering() {
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-sans tracking-widest text-gray-100 mb-3">
+          <h2 className="text-2xl md:text-3xl font-serif tracking-widest text-gray-100 mb-3">
             Our Offerings
           </h2>
-          <p className="text-gray-100 text-sm md:text-base font-light tracking-wider max-w-xl mx-auto">
+          <p className="text-gray-100 text-sm md:text-base font-light leading-tight max-w-xl mx-auto">
             Discover the unique experiences that await you at our hotel.
           </p>
         </div>

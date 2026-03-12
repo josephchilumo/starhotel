@@ -28,10 +28,10 @@ const Hero = () => {
         </h1>
 
         {/* Description */}
-        <p className="text-2xl md:text-xl mt-4 text-gray-200 tracking-widest  font-sans">
+        <p className="text-2xl md:text-xl mt-4 text-gray-200 tracking-widest font-serif font-light">
           From candlelit dinners to peaceful mornings, StarHotel has welcomed travelers for over two decades with comfort, elegance, and unforgettable experiences.
         </p>
-        <button className="mt-10 text-gray-100 border-t rounded-lg border-emerald-500 py-3 px-6 hover:border-b  transition hover:text-gray-300 font-sans tracking-widest">
+        <button className="mt-10 text-gray-100 border-t rounded-lg border-emerald-500 py-3 px-6 hover:border-b  transition hover:text-gray-300 font-sans tracking-widest font-light">
           Explore Our Rooms
         </button>
 

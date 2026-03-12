@@ -25,3 +25,11 @@
 .animate-fadeIn {
   animation: fadeIn 1.2s ease forwards;
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
