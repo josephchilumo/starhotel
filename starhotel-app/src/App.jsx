@@ -5,6 +5,7 @@ import CTA from './components/CTA'
 import Offering from './components/Offering'
 import Gallery from './components/Gallery'
 import GuestReviews from './components/GuestReviews'
+import RoomReview from './components/RoomReview'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Offering />
       <Gallery />
       <GuestReviews />
+      <RoomReview />
 
     </div>
   )

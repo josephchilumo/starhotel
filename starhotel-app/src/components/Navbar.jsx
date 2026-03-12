@@ -14,10 +14,13 @@ const Navbar = () => {
             Accommodation
           </a>
           <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
+            Events & Occassions
+          </a>
+           <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
             Dining
           </a>
           <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
-            Activities
+            Facilities
           </a>
         </nav>
 
@@ -28,8 +31,8 @@ const Navbar = () => {
 
         {/* Right Side */}
         <div className="hidden md:flex items-center space-x-6">
-          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-gray-900 cursor-pointer">
-            Contact
+          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-gray-900 hover:border-b hover:border-gray-500  cursor-pointer">
+            Gallery
           </a>
 
           <button className="bg-white/20 text-gray-600 px-6 py-3 border border-emerald-500 text-sm tracking-tight hover:bg-emerald-500 hover:text-white transition duration-300 font-sans">
