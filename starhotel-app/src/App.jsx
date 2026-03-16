@@ -1,28 +1,18 @@
 import React from 'react'
-import  Hero  from './components/Hero'
-import Navbar from './components/Navbar'
-import CTA from './components/CTA'
-import Offering from './components/Offering'
-import Gallery from './components/Gallery'
-import GuestReviews from './components/GuestReviews'
-import RoomReview from './components/RoomReview'
-import NewsLetter from './components/NewsLetter'
-import Footer from './components/Footer'
+import {BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom'
+import Homepage from './Pages/Homepage'
+import AccomodationPage from './Pages/AccomodationPage'
+import BookingRoom from './Booking/BookingRoom'
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <CTA />
-      <Offering />
-      <Gallery />
-      <GuestReviews />
-      <RoomReview />
-      <NewsLetter/>
-      <Footer />
-
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/rooms' element={<AccomodationPage />} />
+        <Route path='/booking/:id' element={<BookingRoom />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

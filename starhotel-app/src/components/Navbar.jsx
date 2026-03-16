@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,34 +11,54 @@ const Navbar = () => {
 
         {/* Left Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
+          <Link
+            to="/rooms"
+            className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500"
+          >
             Accommodation
-          </a>
-          <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
-            Events & Occassions
-          </a>
-           <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
+          </Link>
+
+          <Link
+            to="/events"
+            className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500"
+          >
+            Events & Occasions
+          </Link>
+
+          <Link
+            to="/dining"
+            className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500"
+          >
             Dining
-          </a>
-          <a className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500 cursor-pointer">
+          </Link>
+
+          <Link
+            to="/facilities"
+            className="text-sm uppercase tracking-widest font-light text-gray-900 hover:border-b hover:text-gray-500"
+          >
             Facilities
-          </a>
+          </Link>
         </nav>
 
         {/* Logo */}
-        <h1 className="text-xl tracking-widest font-light text-gray-900">
+        <Link to="/" className="text-xl tracking-widest font-light text-gray-900">
           Star<span className="font-semibold">Hotel</span>
-        </h1>
+        </Link>
 
         {/* Right Side */}
         <div className="hidden md:flex items-center space-x-6">
-          <a className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-gray-900 hover:border-b hover:border-gray-500  cursor-pointer">
+          <Link
+            to="/gallery"
+            className="text-sm uppercase tracking-tight font-light text-gray-900 hover:text-gray-900 hover:border-b hover:border-gray-500"
+          >
             Gallery
-          </a>
+          </Link>
 
-          <button className="bg-white/20 text-gray-600 px-6 py-3 border border-emerald-500 text-sm tracking-tight hover:bg-emerald-500 hover:text-white transition duration-300 font-sans">
-            Book Now
-          </button>
+          <Link to="/booking">
+            <button className="bg-white/20 text-gray-600 px-6 py-3 border border-emerald-500 text-sm tracking-tight hover:bg-emerald-500 hover:text-white transition duration-300 font-sans">
+              Book Now
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Button */}
@@ -58,14 +79,27 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden border-t px-6 py-6 space-y-4 bg-white">
 
-          <a className="block text-gray-700">Accommodation</a>
-          <a className="block text-gray-700">Dining</a>
-          <a className="block text-gray-700">Activities</a>
-          <a className="block text-gray-700">Contact</a>
+          <Link to="/rooms" className="block text-gray-700">
+            Accommodation
+          </Link>
 
-          <button className="w-full bg-gray-900 text-white py-3 rounded-md">
-            Book Now
-          </button>
+          <Link to="/dining" className="block text-gray-700">
+            Dining
+          </Link>
+
+          <Link to="/activities" className="block text-gray-700">
+            Activities
+          </Link>
+
+          <Link to="/contact" className="block text-gray-700">
+            Contact
+          </Link>
+
+          <Link to="/booking">
+            <button className="w-full bg-gray-900 text-white py-3 rounded-md">
+              Book Now
+            </button>
+          </Link>
 
         </div>
       )}
