@@ -67,7 +67,7 @@ function RoomView() {
                          shadow-sm hover:shadow-lg transition duration-300"
             >
               <img
-                src={room.Images[0]}
+                src={room.images[0]}
                 alt={room.name}
                 className="w-full h-44 object-cover"
               />
