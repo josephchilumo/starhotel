@@ -9,6 +9,14 @@ import Events from './Booking/Events'
 import Dinning from './Booking/Dinning'
 import Facilities from './Booking/Facilities' 
 import GalleryPage from './Booking/GalleryPage'
+import AdminLayout from './admin/AdminLayout'
+import Dashboard from './admin/Dashboard'
+import Bookings from './admin/Bookings'
+import Payments from './admin/Payments'
+import Rooms from './admin/Rooms'
+import ProtectedAdminRoute from './admin/ProtectedAdminRoute'
+import Login from './auth/Login'
+import Register from './auth/Register'
 
 const App = () => {
   return (
@@ -23,6 +31,14 @@ const App = () => {
         <Route path='/dining' element={<Dinning />} />
         <Route path='/facilities' element={<Facilities/>} />
         <Route path='/gallery' element={<GalleryPage />} />
+        <Route path='/admin' element={<ProtectedAdminRoute><AdminLayout /></ProtectedAdminRoute>}>
+          <Route index element={<Dashboard />} />
+          <Route path='bookings' element={<Bookings />} />
+          <Route path='rooms' element={<Rooms />} />
+          <Route path='payment' element={<Payments />} />
+        </Route>
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
     </BrowserRouter>
   )

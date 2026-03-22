@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
-import roomData from "../data/roomData";
+import React, { useRef, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 
 function RoomView() {
   const scrollRef = useRef(null);
@@ -19,6 +19,29 @@ function RoomView() {
       scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
+
+ 
+  const [rooms, setRooms] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(()=> {
+    const fetchRooms = async () => {
+      try {
+        const res = await fetch ('http://localhost:5000/api/accommodations');
+        const data =await res.json();
+        setRooms(data);
+      } catch (err) {
+        setError('Could not load rooms.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchRooms();
+  }, []);
+
+  if(loading) return <p>Loading Rooms...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div className="container mx-auto px-4 py-10">
@@ -59,9 +82,9 @@ function RoomView() {
                      sm:overflow-visible
                      bg-emerald-50 p-4 sm:p-8 rounded-2xl"
         >
-          {roomData.map((room) => (
+          {rooms.map((room) => (
             <div
-              key={room.id}
+              key={room._id}
               className="min-w-[280px] snap-start sm:min-w-0
                          bg-white rounded-lg border border-emerald-700
                          shadow-sm hover:shadow-lg transition duration-300"
@@ -78,7 +101,7 @@ function RoomView() {
                 </h2>
 
                 <p className="text-gray-500 text-sm mb-2">
-                  {room.occuppancy}
+                  {room.occupancy}
                 </p>
 
                 <p className="font-semibold text-emerald-500 mb-4">
@@ -86,13 +109,13 @@ function RoomView() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Link to={`/booking/${room.id}`} className="w-full">
+                  <Link to={`/booking/${room._id}`} className="w-full">
                     <button className="w-full bg-emerald-400 hover:bg-emerald-500 text-white py-2 rounded-md">
                       Book Now
                     </button>
                   </Link>
 
-                  <Link to={`/room/${room.id}`} className="w-full">
+                  <Link to={`/room/${room._id}`} className="w-full">
                     <button className="w-full border border-emerald-400 hover:border-emerald-500 py-2 rounded-md">
                       View Details
                     </button>
