@@ -17,6 +17,9 @@ import Rooms from './admin/Rooms'
 import ProtectedAdminRoute from './admin/ProtectedAdminRoute'
 import Login from './auth/Login'
 import Register from './auth/Register'
+import AdminGallery from './admin/AdminGallery'
+import AdminFacilities from './admin/AdminFacilities'
+import AdminUsers from './admin/AdminUsers'
 
 const App = () => {
   return (
@@ -31,11 +34,14 @@ const App = () => {
         <Route path='/dining' element={<Dinning />} />
         <Route path='/facilities' element={<Facilities/>} />
         <Route path='/gallery' element={<GalleryPage />} />
-        <Route path='/admin' element={<ProtectedAdminRoute><AdminLayout /></ProtectedAdminRoute>}>
+        <Route path='/admin' element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
           <Route path='bookings' element={<Bookings />} />
           <Route path='rooms' element={<Rooms />} />
-          <Route path='payment' element={<Payments />} />
+          <Route path='payments' element={<Payments />} />
+          <Route path='admingallery' element={<AdminGallery />} />
+          <Route path='adminfacilities' element={<AdminFacilities />} />
+          <Route path='users' element={<AdminUsers />} />
         </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
