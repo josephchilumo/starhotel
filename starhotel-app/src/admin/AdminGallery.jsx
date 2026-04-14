@@ -19,7 +19,6 @@ const STYLES = `
 
   .ag-root { font-family: 'Jost', sans-serif; color: var(--bark); }
 
-  /* ── Page header ── */
   .ag-header {
     display: flex; align-items: flex-end;
     justify-content: space-between; gap: 1rem;
@@ -27,13 +26,11 @@ const STYLES = `
   }
   .ag-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem; font-weight: 300; line-height: 1;
-    letter-spacing: -0.02em;
+    font-size: 2rem; font-weight: 300; line-height: 1; letter-spacing: -0.02em;
   }
   .ag-title em { font-style: italic; color: var(--bronze); }
   .ag-subtitle { font-size: 0.72rem; color: var(--fog); margin-top: 0.3rem; }
 
-  /* ── Stats ── */
   .ag-stats {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 1px; background: var(--border); border: 1px solid var(--border);
@@ -43,18 +40,14 @@ const STYLES = `
 
   .ag-stat {
     background: var(--white); padding: 1.1rem 1.4rem;
-    display: flex; flex-direction: column; gap: 0.25rem;
-    position: relative;
+    display: flex; flex-direction: column; gap: 0.25rem; position: relative;
   }
   .ag-stat::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0;
     height: 2px; background: var(--border); transition: background 0.3s;
   }
   .ag-stat:hover::before { background: var(--bronze); }
-  .ag-stat-label {
-    font-size: 0.56rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--fog);
-  }
+  .ag-stat-label { font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fog); }
   .ag-stat-val {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem; font-weight: 300; line-height: 1;
@@ -62,10 +55,8 @@ const STYLES = `
   }
   .ag-stat-val.bronze { color: var(--bronze); }
 
-  /* ── Upload zone ── */
   .ag-upload-zone {
-    border: 1.5px dashed var(--border);
-    background: var(--white);
+    border: 1.5px dashed var(--border); background: var(--white);
     padding: 2.5rem;
     display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
     cursor: pointer; transition: border-color 0.25s, background 0.25s;
@@ -79,21 +70,17 @@ const STYLES = `
   .ag-upload-zone.dragging .ag-upload-icon { color: var(--bronze); }
   .ag-upload-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem; font-weight: 300; color: rgba(43,35,24,0.5);
-    font-style: italic;
+    font-size: 1.15rem; font-weight: 300; color: rgba(43,35,24,0.5); font-style: italic;
   }
   .ag-upload-sub { font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(43,35,24,0.3); }
   .ag-upload-btn {
-    margin-top: 0.25rem;
-    padding: 0.5rem 1.5rem;
+    margin-top: 0.25rem; padding: 0.5rem 1.5rem;
     font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
     background: var(--bark); color: var(--parch);
-    border: none; cursor: pointer; font-family: 'Jost', sans-serif;
-    transition: background 0.2s;
+    border: none; cursor: pointer; font-family: 'Jost', sans-serif; transition: background 0.2s;
   }
   .ag-upload-btn:hover { background: var(--bronze); }
 
-  /* Upload progress */
   .ag-uploading {
     display: flex; align-items: center; gap: 0.75rem;
     font-size: 0.72rem; color: var(--fog); margin-bottom: 1rem;
@@ -106,7 +93,6 @@ const STYLES = `
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ── Toolbar ── */
   .ag-toolbar {
     display: flex; align-items: center; gap: 0.75rem;
     margin-bottom: 1.25rem; flex-wrap: wrap;
@@ -114,8 +100,7 @@ const STYLES = `
   .ag-search-wrap {
     flex: 1; min-width: 180px;
     display: flex; align-items: center; gap: 0.6rem;
-    background: var(--white); border: 1px solid var(--border);
-    padding: 0.55rem 0.9rem;
+    background: var(--white); border: 1px solid var(--border); padding: 0.55rem 0.9rem;
   }
   .ag-search-icon { color: var(--fog); flex-shrink: 0; }
   .ag-search {
@@ -135,36 +120,28 @@ const STYLES = `
   .ag-cat-btn:hover  { color: var(--bark); border-color: rgba(43,35,24,0.2); }
   .ag-cat-btn.active { background: var(--bark); color: #f0ece4; border-color: var(--bark); }
 
-  /* ── Masonry grid ── */
   .ag-grid {
     columns: 4; column-gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
+    background: var(--border); border: 1px solid var(--border);
   }
   @media (max-width: 1000px) { .ag-grid { columns: 3; } }
   @media (max-width: 700px)  { .ag-grid { columns: 2; } }
   @media (max-width: 420px)  { .ag-grid { columns: 1; } }
 
-  /* ── Image cell ── */
   .ag-cell {
-    break-inside: avoid;
-    position: relative; overflow: hidden;
-    margin-bottom: 1px; cursor: pointer;
-    background: var(--white);
+    break-inside: avoid; position: relative; overflow: hidden;
+    margin-bottom: 1px; cursor: pointer; background: var(--white);
   }
   .ag-cell-img {
-    width: 100%; display: block; object-fit: cover;
-    transition: transform 0.6s ease;
+    width: 100%; display: block; object-fit: cover; transition: transform 0.6s ease;
   }
   .ag-cell:hover .ag-cell-img { transform: scale(1.05); }
 
   .ag-cell-overlay {
-    position: absolute; inset: 0;
-    background: rgba(14,15,13,0.55);
+    position: absolute; inset: 0; background: rgba(14,15,13,0.55);
     opacity: 0; transition: opacity 0.3s;
     display: flex; flex-direction: column;
-    align-items: flex-end; justify-content: space-between;
-    padding: 0.75rem;
+    align-items: flex-end; justify-content: space-between; padding: 0.75rem;
   }
   .ag-cell:hover .ag-cell-overlay { opacity: 1; }
 
@@ -172,38 +149,25 @@ const STYLES = `
     width: 28px; height: 28px;
     background: rgba(192,57,43,0.9); border: none; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    color: white; transition: background 0.2s;
-    flex-shrink: 0;
+    color: white; transition: background 0.2s; flex-shrink: 0;
   }
   .ag-cell-delete:hover { background: var(--red); }
 
-  .ag-cell-meta {
-    width: 100%;
-  }
+  .ag-cell-meta { width: 100%; }
   .ag-cell-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.85rem; font-style: italic; color: rgba(255,255,255,0.85);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
-  .ag-cell-cat {
-    font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--bronze-lt);
-  }
+  .ag-cell-cat { font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze-lt); }
 
-  /* ── Skeleton ── */
   .ag-skel { animation: shimmer 1.4s ease-in-out infinite; }
   @keyframes shimmer { 0%,100%{opacity:.45} 50%{opacity:1} }
-  .ag-skel-cell {
-    break-inside: avoid; margin-bottom: 1px;
-    background: var(--border);
-  }
+  .ag-skel-cell { break-inside: avoid; margin-bottom: 1px; background: var(--border); }
 
-  /* ── Empty ── */
   .ag-empty {
-    grid-column: 1/-1; padding: 4rem;
-    display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
-    background: var(--white); border: 1px solid var(--border);
-    text-align: center;
+    padding: 4rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+    background: var(--white); border: 1px solid var(--border); text-align: center;
   }
   .ag-empty-icon { color: rgba(43,35,24,0.1); }
   .ag-empty-title {
@@ -212,26 +176,18 @@ const STYLES = `
   }
   .ag-empty-sub { font-size: 0.7rem; color: rgba(43,35,24,0.25); }
 
-  /* ── Delete modal ── */
   .ag-modal-backdrop {
-    position: fixed; inset: 0;
-    background: rgba(14,15,13,0.65);
+    position: fixed; inset: 0; background: rgba(14,15,13,0.65);
     backdrop-filter: blur(4px); z-index: 500;
     display: flex; align-items: center; justify-content: center; padding: 1rem;
   }
-  .ag-modal {
-    background: var(--white); padding: 2rem; max-width: 360px; width: 100%;
-  }
-  .ag-modal-img {
-    width: 100%; height: 140px; object-fit: cover; margin-bottom: 1.25rem;
-  }
+  .ag-modal { background: var(--white); padding: 2rem; max-width: 360px; width: 100%; }
+  .ag-modal-img { width: 100%; height: 140px; object-fit: cover; margin-bottom: 1.25rem; }
   .ag-modal-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem; font-weight: 400; color: var(--bark); margin-bottom: 0.5rem;
   }
-  .ag-modal-sub {
-    font-size: 0.78rem; color: var(--fog); line-height: 1.6; margin-bottom: 1.5rem;
-  }
+  .ag-modal-sub { font-size: 0.78rem; color: var(--fog); line-height: 1.6; margin-bottom: 1.5rem; }
   .ag-modal-btns { display: flex; gap: 0.75rem; }
   .ag-modal-cancel {
     flex: 1; padding: 0.7rem;
@@ -246,24 +202,20 @@ const STYLES = `
     font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
     background: var(--red); color: white; border: none;
     cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 500;
-    transition: background 0.2s;
   }
   .ag-modal-confirm:hover { background: #a93226; }
 
-  /* ── Count bar ── */
   .ag-count-bar {
-    padding: 0.6rem 1.25rem; border-top: 1px solid var(--border);
+    padding: 0.6rem 1.25rem;
     border: 1px solid var(--border); border-top: none;
     font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
     color: rgba(43,35,24,0.3); background: var(--parch);
   }
 
-  /* Success toast */
   .ag-toast {
     position: fixed; bottom: 2rem; right: 2rem; z-index: 600;
     background: var(--bark); color: var(--parch);
-    padding: 0.75rem 1.25rem;
-    font-size: 0.72rem; letter-spacing: 0.08em;
+    padding: 0.75rem 1.25rem; font-size: 0.72rem; letter-spacing: 0.08em;
     display: flex; align-items: center; gap: 0.6rem;
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     animation: toastIn 0.3s ease both;
@@ -274,9 +226,26 @@ const STYLES = `
   }
 `;
 
-const CATEGORIES = ["All", "Rooms", "Dining", "Exterior", "Events", "Wellness"];
+const HEIGHTS = [180, 240, 200, 260, 190, 220, 250, 180, 230];
 
-const HEIGHTS = [180, 240, 200, 260, 190, 220, 250, 180, 230]; // varied masonry heights
+// ─────────────────────────────────────────────────────────
+// Normalise raw API image into a consistent shape so the
+// rest of the component always works with the same fields.
+//
+// Your backend may return any of these field names:
+//   image URL  → url | src | image | imageUrl
+//   title      → title | name | caption
+//   category   → category | cat | type
+// ─────────────────────────────────────────────────────────
+function normalise(raw) {
+  return {
+    _id:      raw._id      ?? raw.id      ?? Math.random().toString(36).slice(2),
+    src:      raw.url      ?? raw.src     ?? raw.image    ?? raw.imageUrl ?? "",
+    title:    raw.title    ?? raw.name    ?? raw.caption  ?? "",
+    // ✅ FIX: always stored as `cat` — no more url/category mismatch
+    cat:      raw.category ?? raw.cat     ?? raw.type     ?? "General",
+  };
+}
 
 function SkeletonGrid() {
   return Array.from({ length: 9 }).map((_, i) => (
@@ -301,11 +270,13 @@ export default function AdminGallery() {
     try {
       const res = await axios.get("/api/gallery");
       const raw = res.data;
-      const list = Array.isArray(raw)         ? raw
-                 : Array.isArray(raw?.images)  ? raw.images
-                 : Array.isArray(raw?.data)    ? raw.data
+      const list = Array.isArray(raw)          ? raw
+                 : Array.isArray(raw?.images)   ? raw.images
+                 : Array.isArray(raw?.gallery)  ? raw.gallery
+                 : Array.isArray(raw?.data)     ? raw.data
                  : [];
-      setImages(list);
+      // ✅ FIX: normalise every image so fields are consistent
+      setImages(list.map(normalise));
     } catch {
       setError("Could not load gallery images.");
     } finally {
@@ -342,7 +313,7 @@ export default function AdminGallery() {
     if (!toDelete) return;
     try {
       await axios.delete(`/api/gallery/${toDelete._id}`);
-      setImages(prev => prev.filter(i => i._id !== toDelete._id));
+      setImages(prev => prev.filter(img => img._id !== toDelete._id));
       showToast("Image deleted");
     } catch {
       showToast("Delete failed.");
@@ -351,24 +322,37 @@ export default function AdminGallery() {
     }
   };
 
+  // ✅ FIX: categories derived dynamically from normalised data
+  const categories = [
+    "All",
+    ...Array.from(new Set(images.map(img => img.cat))).filter(Boolean).sort(),
+  ];
+
+  // ✅ FIX: filter and stats both use img.cat — consistent field name
   const filtered = images.filter(img => {
     const matchSearch = !search || img.title?.toLowerCase().includes(search.toLowerCase());
-    const matchCat = category === "All" || img.category === category;
+    const matchCat    = category === "All" || img.cat === category;
     return matchSearch && matchCat;
   });
 
-  // Drag & drop
+  // ✅ FIX: stats built from normalised img.cat, not raw API field
+  const topCategories = categories
+    .slice(1)
+    .map(cat => ({ cat, count: images.filter(img => img.cat === cat).length }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 3);
+
+  // Reset filter if it disappears after a re-fetch
+  useEffect(() => {
+    if (category !== "All" && !categories.includes(category)) setCategory("All");
+  }, [images]);
+
   const onDragOver  = (e) => { e.preventDefault(); setDragging(true); };
   const onDragLeave = ()  => setDragging(false);
   const onDrop      = (e) => {
     e.preventDefault(); setDragging(false);
     handleUpload(e.dataTransfer.files);
   };
-
-  const byCategory = CATEGORIES.slice(1).reduce((acc, cat) => {
-    acc[cat] = images.filter(i => i.category === cat).length;
-    return acc;
-  }, {});
 
   return (
     <>
@@ -392,16 +376,23 @@ export default function AdminGallery() {
           </button>
         </div>
 
-        {/* ── Stats ── */}
+        {/* ── Stats — top 3 categories by count ── */}
         <div className="ag-stats">
           <div className="ag-stat">
             <span className="ag-stat-label">Total Images</span>
             <span className="ag-stat-val">{images.length}</span>
           </div>
-          {Object.entries(byCategory).slice(0, 3).map(([cat, count]) => (
+          {topCategories.map(({ cat, count }) => (
             <div key={cat} className="ag-stat">
               <span className="ag-stat-label">{cat}</span>
               <span className="ag-stat-val bronze">{count}</span>
+            </div>
+          ))}
+          {/* Fill empty stat slots if fewer than 3 categories */}
+          {Array.from({ length: Math.max(0, 3 - topCategories.length) }).map((_, i) => (
+            <div key={`empty-${i}`} className="ag-stat">
+              <span className="ag-stat-label">—</span>
+              <span className="ag-stat-val" style={{ color:"var(--fog)" }}>0</span>
             </div>
           ))}
         </div>
@@ -435,7 +426,6 @@ export default function AdminGallery() {
           </div>
         </div>
 
-        {/* Upload progress */}
         {uploading && (
           <div className="ag-uploading">
             <div className="ag-upload-spinner" />
@@ -443,7 +433,7 @@ export default function AdminGallery() {
           </div>
         )}
 
-        {/* ── Toolbar ── */}
+        {/* ── Toolbar — dynamic category buttons ── */}
         <div className="ag-toolbar">
           <div className="ag-search-wrap">
             <span className="ag-search-icon">
@@ -458,7 +448,8 @@ export default function AdminGallery() {
               onChange={e => setSearch(e.target.value)}
             />
           </div>
-          {CATEGORIES.map(cat => (
+          {/* ✅ FIX: categories derived from data, not hardcoded */}
+          {categories.map(cat => (
             <button
               key={cat}
               className={`ag-cat-btn${category === cat ? " active" : ""}`}
@@ -487,19 +478,22 @@ export default function AdminGallery() {
             </div>
             <div className="ag-empty-title">No images found</div>
             <div className="ag-empty-sub">
-              {search || category !== "All" ? "Try adjusting your search or filter" : "Upload your first image above"}
+              {search || category !== "All"
+                ? "Try adjusting your search or filter"
+                : "Upload your first image above"}
             </div>
           </div>
         ) : (
           <>
             <div className="ag-grid">
               {filtered.map((img, i) => (
-                <div key={img._id ?? i} className="ag-cell">
+                <div key={img._id} className="ag-cell">
                   <img
-                    src={img.url ?? img.src ?? img.image}
-                    alt={img.title ?? "Gallery image"}
+                    src={img.src}
+                    alt={img.title || "Gallery image"}
                     className="ag-cell-img"
                     style={{ height: `${HEIGHTS[i % HEIGHTS.length]}px` }}
+                    onError={e => { e.target.style.opacity = "0.15"; }}
                   />
                   <div className="ag-cell-overlay">
                     <button
@@ -513,7 +507,7 @@ export default function AdminGallery() {
                     </button>
                     <div className="ag-cell-meta">
                       {img.title && <div className="ag-cell-title">{img.title}</div>}
-                      {img.category && <div className="ag-cell-cat">{img.category}</div>}
+                      {img.cat   && <div className="ag-cell-cat">{img.cat}</div>}
                     </div>
                   </div>
                 </div>
@@ -526,20 +520,16 @@ export default function AdminGallery() {
           </>
         )}
 
-        {/* ── Delete confirmation modal ── */}
+        {/* ── Delete modal ── */}
         {toDelete && (
           <div className="ag-modal-backdrop" onClick={() => setToDelete(null)}>
             <div className="ag-modal" onClick={e => e.stopPropagation()}>
-              {(toDelete.url ?? toDelete.src ?? toDelete.image) && (
-                <img
-                  src={toDelete.url ?? toDelete.src ?? toDelete.image}
-                  alt="To delete"
-                  className="ag-modal-img"
-                />
+              {toDelete.src && (
+                <img src={toDelete.src} alt="To delete" className="ag-modal-img" />
               )}
               <div className="ag-modal-title">Delete Image</div>
               <p className="ag-modal-sub">
-                This image will be permanently removed from the gallery. This action cannot be undone.
+                This image will be permanently removed from the gallery. This cannot be undone.
               </p>
               <div className="ag-modal-btns">
                 <button className="ag-modal-cancel" onClick={() => setToDelete(null)}>Cancel</button>
